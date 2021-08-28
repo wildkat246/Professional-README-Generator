@@ -1,22 +1,59 @@
 // TODO: Include packages needed for this application
-var inquirer = require('inquirer');
-inquirer
-  .prompt([
-    /* Pass your questions in here */
+const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require(`./utils/generateMarkdown`);
+
+inquirer.prompt([
+    {
+        type: 'input',
+        message: 'WHat is the title?',
+        name: 'title',
+    },
+    {
+        type: 'input',
+        message: 'What is the description?',
+        name: 'description',
+    },
+    {
+        type: 'input',
+        message: 'How many table of contents?',
+        name: 'contents',
+    },
+    {
+        type: 'input',
+        message: 'WHat installations will you need?',
+        name: 'install',
+    },
+    {
+        type: 'input',
+        message: 'What will the app be used for?',
+        name: 'usage',
+    },
+    {
+        type: 'list',
+        message: 'WHat license will be used?',
+        name: 'license',
+    },
+    {
+        type: 'input',
+        message: 'What will you be contributing?',
+        name: 'contributing',
+    },
+    {
+        type: 'input',
+        message: 'what commands wiil need to test?',
+        name: 'test',
+    },
+    {
+        type: 'input',
+        message: 'what is you github address?',
+        name: '',
+    },
   ])
-  .then((answers) => {
-    // Use user feedback for... whatever!!
+  .then((response) => {
+    resposne.confirm === response.input
   })
-  .catch((error) => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
-  });
-
   
-
 // TODO: Create an array of questions for user input
 const questions = [];
 
